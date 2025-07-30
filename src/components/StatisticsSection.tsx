@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
+import { Users, Award, Download, Heart, UserCheck } from "lucide-react";
 
 const statistics = [
-  { label: "Caring Volunteers", value: 150, suffix: "+" },
-  { label: "Global Partners", value: 25, suffix: "+" },
-  { label: "Donations Raised", value: 250000, prefix: "$", suffix: "+" },
-  { label: "Program Costs", value: 180000, prefix: "$", suffix: "+" },
-  { label: "Elderly Served", value: 320, suffix: "+" }
+  { label: "Team Members", value: 200, suffix: "+", icon: Users },
+  { label: "Achievements", value: 30, suffix: "+", icon: Award },
+  { label: "Active Programs", value: 10, suffix: " M+", icon: Download },
+  { label: "Lives Touched", value: 3.7, suffix: " M", icon: Heart },
+  { label: "Years of Service", value: 160, suffix: "+", icon: UserCheck }
 ];
 
 const StatisticsSection = () => {
@@ -32,14 +33,14 @@ const StatisticsSection = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-r from-warmth to-care">
+    <section className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Making a Difference Together
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            Our Impact in Numbers
           </h2>
-          <p className="text-xl text-white/90 max-w-3xl mx-auto">
-            Every number represents a life touched, a story honored, and hope restored.
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            Get to know the essence of our company—where cutting-edge solutions and a deep commitment to excellence come together
           </p>
         </div>
         
@@ -47,14 +48,16 @@ const StatisticsSection = () => {
           {statistics.map((stat, index) => (
             <div
               key={index}
-              className="text-center bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20"
+              className="text-center group"
             >
-              <div className="text-4xl md:text-5xl font-bold text-white mb-2">
-                {stat.prefix}
-                {formatNumber(counters[index])}
+              <div className="w-16 h-16 bg-muted rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-warmth/10 transition-colors">
+                <stat.icon className="h-8 w-8 text-warmth" />
+              </div>
+              <div className="text-3xl md:text-4xl font-bold text-foreground mb-2">
+                {counters[index] === stat.value ? stat.value : formatNumber(counters[index])}
                 {stat.suffix}
               </div>
-              <div className="text-lg text-white/90 font-medium">
+              <div className="text-sm text-muted-foreground font-medium">
                 {stat.label}
               </div>
             </div>

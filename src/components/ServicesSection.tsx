@@ -35,34 +35,43 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <section className="py-20 bg-background">
+    <section className="py-20 bg-muted/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Our Services
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            We provide comprehensive care and support to ensure dignity, comfort, and happiness for every resident.
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            Our mission is to drive progress and enhance the lives of our residents by delivering superior care and services that exceed expectations.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {services.map((service, index) => (
             <div
               key={index}
-              className="group p-8 bg-card rounded-2xl border border-border hover:shadow-elegant transition-all duration-300 hover:-translate-y-2"
+              className="group p-6 bg-background rounded-xl border border-border hover:shadow-lg transition-all duration-300 text-center"
             >
-              <div className="w-16 h-16 bg-warmth/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-warmth/20 transition-colors">
-                <service.icon className="h-8 w-8 text-warmth" />
+              <div className="w-12 h-12 bg-warmth/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-warmth/20 transition-colors">
+                <service.icon className="h-6 w-6 text-warmth" />
               </div>
-              <h3 className="text-xl font-semibold text-foreground mb-3">
+              <h3 className="text-lg font-semibold text-foreground mb-3">
                 {service.title}
               </h3>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                 {service.description}
               </p>
+              <button className="text-warmth text-sm font-medium hover:text-warmth/80 transition-colors flex items-center justify-center mx-auto gap-1">
+                Read more →
+              </button>
             </div>
           ))}
+        </div>
+        
+        <div className="text-center">
+          <button className="bg-warmth text-warmth-foreground px-8 py-3 rounded-full font-medium hover:bg-warmth/90 transition-colors">
+            Hire Us Today →
+          </button>
         </div>
       </div>
     </section>
