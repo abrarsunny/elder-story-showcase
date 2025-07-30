@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { Heart, Mail, Phone, MapPin, Facebook, Twitter, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
