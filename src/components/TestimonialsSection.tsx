@@ -1,4 +1,6 @@
-import { motion } from "framer-motion";
+"use client";
+
+import { motion } from "./MotionWrapper";
 import { Star } from "lucide-react";
 
 const testimonials = [

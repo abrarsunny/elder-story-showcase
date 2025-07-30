@@ -1,5 +1,7 @@
+"use client";
+
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { motion } from "./MotionWrapper";
 import { Users, Award, Download, Heart, UserCheck } from "lucide-react";
 
 const statistics = [

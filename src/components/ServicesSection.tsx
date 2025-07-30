@@ -1,5 +1,8 @@
-import { motion } from "framer-motion";
+"use client";
+
+import { motion } from "./MotionWrapper";
 import { Heart, Users, Stethoscope, Home, Utensils, GamepadIcon } from "lucide-react";
+import Link from "next/link";
 
 const services = [
   {
@@ -109,9 +112,11 @@ const ServicesSection = () => {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="text-center"
         >
-          <button className="bg-warmth text-warmth-foreground px-8 py-3 rounded-full font-medium hover:bg-warmth/90 transition-colors">
-            Hire Us Today →
-          </button>
+          <Link href="/donate">
+            <button className="bg-warmth text-warmth-foreground px-8 py-3 rounded-full font-medium hover:bg-warmth/90 transition-colors">
+              Donate Now →
+            </button>
+          </Link>
         </motion.div>
       </div>
     </section>
